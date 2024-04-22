@@ -1,0 +1,52 @@
+                          +------------------+
+                          |   Gymnasium      |
+                          +------------------+
+                          | GymnasiumID (PK) |
+                          | Name             |
+                          | Address          |
+                          | TelephoneNumber  |
+                          +------------------+
+                                  |
+                                  |
+                                (1, n)
+                                  |
+                          +---------------------+
+                          |       Member        |
+                          +---------------------+
+                          | MemberID (PK)      |
+                          | LastName           |
+                          | FirstName          |
+                          | Address            |
+                          | DateOfBirth        |
+                          | Gender             |
+                          | GymnasiumID (FK)   |
+                          +---------------------+
+                                  |
+                                  (1, n)
+                                  |
+                                  |
+                         +---------------------+
+                         |       Session       |
+                         +---------------------+
+                         | SessionID (PK)      |
+                         | TypeOfSport         |
+                         | Schedule            |
+                         | GymnasiumID (FK)   |
+                         +-------------------------+
+                                    |            |
+                                    |            |
+                                   |          (1, n)
+                                  |             |
+                                  |             |
+                                  (1, 1)        |      
+                                  |             |
+                                  |             |
+                        +----------------+   +----------------+
+                        |      Coach     |   | MemberSession  |
+                        +----------------+   +----------------+
+                        | CoachID (PK)   |   | MemberSessionID|
+                        | LastName       |   | MemberID (FK)  |
+                        | FirstName      |   | SessionID (FK) |
+                        | Age            |   +----------------+
+                        | Specialty      |
+                        +----------------+
